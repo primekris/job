@@ -1,3 +1,19 @@
+import os
+
+# Get the current directory
+print("🔍 Current Directory:", os.getcwd())
+
+# List all files
+print("📂 Files in Directory:", os.listdir())
+
+# Check if the model file exists
+MODEL_PATH = "knn_model_heart.joblib"
+if not os.path.exists(MODEL_PATH):
+    raise FileNotFoundError(f"❌ Model file not found at: {MODEL_PATH}")
+else:
+    print("✅ Model found at:", MODEL_PATH)
+
+
 import streamlit as st
 import pandas as pd
 import joblib
@@ -283,23 +299,5 @@ elif model_choice == "Liver Disease Prediction":
                 st.success(f"Prediction: No Liver Disease detected with probability {prob:.2f}")
 
 
-
-import os
-import joblib
-
-# Get the absolute path of the current script
-BASE_DIR = os.path.dirname(os.path.abspath(__file__))
-MODEL_PATH = os.path.join(BASE_DIR, "knn_model_heart.joblib")
-
-# Debugging: Print the absolute path of the model file
-print(f"🔍 Looking for model at: {MODEL_PATH}")
-
-# Check if the file exists before loading
-if not os.path.exists(MODEL_PATH):
-    raise FileNotFoundError(f"❌ Model file not found at: {MODEL_PATH}")
-
-# Load the model
-heart_classifier = joblib.load(MODEL_PATH)
-print("✅ Model loaded successfully!")
 
 
