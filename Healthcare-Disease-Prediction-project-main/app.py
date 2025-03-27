@@ -1,18 +1,3 @@
-import os
-
-# Get the current working directory
-print("🔍 Current Directory:", os.getcwd())
-
-# List all files in the directory
-print("📂 Files in Directory:", os.listdir())
-
-# Check if the model file exists
-MODEL_PATH = "knn_model_heart.joblib"
-
-if not os.path.exists(MODEL_PATH):
-    raise FileNotFoundError(f"❌ Model file not found at: {MODEL_PATH}")
-else:
-    print("✅ Model found at:", MODEL_PATH)
 
 
 import streamlit as st
@@ -21,7 +6,7 @@ import joblib
 import numpy as np
 
 # Load pre-trained models and scalers
-heart_classifier = joblib.load('knn_model_heart.joblib')
+heart_classifier = joblib.load('knn_model_heart1.joblib')
 kidney_classifier = joblib.load('knn_model_kidney.joblib')
 hypertension_classifier = joblib.load('knn_model_hypertension.joblib')
 diabetes_classifier = joblib.load('knn_model_diabetes.joblib')
