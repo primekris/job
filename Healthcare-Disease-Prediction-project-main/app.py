@@ -1,13 +1,14 @@
 import os
 
-# Get the current directory
+# Get the current working directory
 print("🔍 Current Directory:", os.getcwd())
 
-# List all files
+# List all files in the directory
 print("📂 Files in Directory:", os.listdir())
 
 # Check if the model file exists
 MODEL_PATH = "knn_model_heart.joblib"
+
 if not os.path.exists(MODEL_PATH):
     raise FileNotFoundError(f"❌ Model file not found at: {MODEL_PATH}")
 else:
