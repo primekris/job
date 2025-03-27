@@ -289,9 +289,10 @@ import joblib
 
 # Get the absolute path of the current script
 BASE_DIR = os.path.dirname(os.path.abspath(__file__))
-
-# Define the full model path
 MODEL_PATH = os.path.join(BASE_DIR, "knn_model_heart.joblib")
+
+# Debugging: Print the absolute path of the model file
+print(f"🔍 Looking for model at: {MODEL_PATH}")
 
 # Check if the file exists before loading
 if not os.path.exists(MODEL_PATH):
@@ -300,4 +301,5 @@ if not os.path.exists(MODEL_PATH):
 # Load the model
 heart_classifier = joblib.load(MODEL_PATH)
 print("✅ Model loaded successfully!")
+
 
