@@ -6,7 +6,7 @@ import joblib
 import numpy as np
 
 # Load pre-trained models and scalers
-heart_classifier = joblib.load('knn_model_heart1.joblib')
+
 kidney_classifier = joblib.load('knn_model_kidney.joblib')
 hypertension_classifier = joblib.load('knn_model_hypertension.joblib')
 diabetes_classifier = joblib.load('knn_model_diabetes.joblib')
